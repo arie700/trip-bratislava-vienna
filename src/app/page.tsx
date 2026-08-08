@@ -1,4 +1,5 @@
 import { createClient } from "@/lib/supabase/server";
+import { SUPABASE_URL } from "@/lib/supabase/config";
 import { SEED_CONTENT } from "@/lib/seedContent";
 import TripSite from "@/components/TripSite";
 import type { TripContent, Expense, TripDocument } from "@/lib/types";
@@ -23,7 +24,7 @@ export default async function Home() {
   const expenses: Expense[] = expenseRows || [];
   const documents: TripDocument[] = documentRows || [];
 
-  const documentsBaseUrl = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/documents`;
+  const documentsBaseUrl = `${SUPABASE_URL}/storage/v1/object/public/documents`;
 
   return (
     <TripSite
