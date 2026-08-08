@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Script from "next/script";
+import Link from "next/link";
 import type { TripContent, Expense, TripDocument } from "@/lib/types";
 import { DOCUMENT_CATEGORIES } from "@/lib/types";
 
@@ -344,6 +345,12 @@ export default function TripSite({
             📥 ייצא לאקסל (.xlsx)
           </button>
         </div>
+      </div>
+
+      <div style={{ textAlign: "center", padding: "20px 0 10px" }}>
+        <Link href="/admin" style={{ fontSize: "0.75em", color: "#c3c9d1", textDecoration: "none" }}>
+          ⚙️
+        </Link>
       </div>
     </>
   );
